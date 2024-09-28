@@ -1,0 +1,16 @@
+// Import scanner.
+import java.util.Scanner;
+// Declare main public class.
+public class Main {
+    public static void main(String[] args) {
+        // Create Scanner object to read user input for length of side when prompted.
+        Scanner scanner = new Scanner(System.in);
+        // Prompt the user to enter the length of one side of the hexagon. 
+        System.out.print("Enter the length of one side of the hexagon: ");
+        double side = scanner.nextDouble();
+        // Calculate the area of the hexagon by using the formula (6 x (side sq.)) / (4 x tan(PI/6)) 
+        double area = (6 * (side * side)) / (4 * Math.tan(Math.PI/ 6));
+        // Display the area
+        System.out.printf("The area of the hexagon is: %.2f%n", area);
+    }
+}
