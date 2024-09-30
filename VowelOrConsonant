@@ -1,16 +1,43 @@
 import java.util.Scanner;
+//Declare main
 public class Main {
     public static void main(String[] args) {
+        //Create scanner object to read user input for letter when prompted. 
         Scanner scanner = new Scanner(System.in);
+        //Prompt the user to enter a letter.
         System.out.print("Enter a letter: ");
         char letter = scanner.next().charAt(0);
-        if (isVowel(letter)) {
-            System.out.println(letter + " is a vowel.");
+
+        // Check if the user input is a letter in the alphabet. 
+        // Call isAlphabet boolean function to determine if user            
+        // input a letter between 'a' and 'z'.
+        // If not an error message will be displayed.
+        if (isAlphabet(letter)) {
+            //Call isVowel boolean function to determine if user                
+            // input is a vowel. 
+            if (isVowel(letter)) {
+                // if user input is a letter and is a vowel,                        
+                //display the letter and "is a vowel."
+                System.out.println(letter + " is a vowel.");
+            } else {
+                // if user input is a letter and not a vowel                        
+                // display the letter and "is a consonant."
+                System.out.println(letter + " is a consonant.");
+            }
+            // if user input is not a letter display " not a                    
+            // letter."
         } else {
-            System.out.println(letter + " is a consonant.");
+            System.out.println(letter + " is not a letter.");
         }
         scanner.close();
     }
+    // boolean function to determine if user input is within the        
+    // alphabet. 
+    public static boolean isAlphabet(char letter) {
+        char lowerCaseLetter = Character.toLowerCase(letter);
+        return lowerCaseLetter >= 'a' && lowerCaseLetter <= 'z';
+    }
+     // boolean function to determine if user input is a vowel.  
     public static boolean isVowel(char letter) {
         char lowerCaseLetter = Character.toLowerCase(letter);
         return lowerCaseLetter == 'a' || lowerCaseLetter == 'e' || 
